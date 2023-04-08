@@ -2,9 +2,11 @@ package com.melihgencturk.rentacar.api.controllers;
 
 import com.melihgencturk.rentacar.business.abstracts.BrandService;
 import com.melihgencturk.rentacar.business.dto.requests.create.CreateBrandRequest;
+import com.melihgencturk.rentacar.business.dto.requests.update.UpdateBrandRequest;
 import com.melihgencturk.rentacar.business.dto.responses.create.CreateBrandResponse;
 import com.melihgencturk.rentacar.business.dto.responses.get.GetAllBrandsResponse;
 import com.melihgencturk.rentacar.business.dto.responses.get.GetBrandResponse;
+import com.melihgencturk.rentacar.business.dto.responses.update.UpdateBrandResponse;
 import com.melihgencturk.rentacar.entities.Brand;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -36,7 +38,7 @@ public class BrandsController {
     }
 
     @PutMapping("/{id}")
-    public Brand update(@PathVariable int id, @RequestBody Brand brand){
+    public UpdateBrandResponse update(@PathVariable int id, @RequestBody UpdateBrandRequest brand){
         return service.update(id,brand);
     }
 

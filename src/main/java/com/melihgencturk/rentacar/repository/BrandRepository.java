@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface BrandRepository extends JpaRepository<Brand, Integer> {
     //custom queries
-
+    boolean existsByNameIgnoreCase(String name);
 
 }
