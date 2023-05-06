@@ -6,24 +6,21 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDate;
-
 @Entity
-@Table(name = "maintenances")
+@Table(name = "payments")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Maintenance {
+public class Payment {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String information;
-    private LocalDate startDate;
-    private LocalDate endDate;
-    private boolean isCompleted;
-
-    @ManyToOne
-    @JoinColumn(name = "car_id")
-    private Car car;
+    private String cardNumber;
+    private String cardHolder;
+    private int cardExpirationYear;
+    private int cardExpirationMonth;
+    private String cardCvv;
+    private double balance;
 }

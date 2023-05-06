@@ -7,6 +7,7 @@ import com.melihgencturk.rentacar.business.dto.responses.create.CreateModelRespo
 import com.melihgencturk.rentacar.business.dto.responses.get.GetAllModelsResponse;
 import com.melihgencturk.rentacar.business.dto.responses.get.GetModelResponse;
 import com.melihgencturk.rentacar.business.dto.responses.update.UpdateModelResponse;
+import com.melihgencturk.rentacar.core.exceptions.BusinessException;
 import com.melihgencturk.rentacar.entities.Model;
 import com.melihgencturk.rentacar.repository.ModelRepository;
 import lombok.AllArgsConstructor;
@@ -67,13 +68,13 @@ public class ModelManager implements ModelService {
 
     private void checkIfModelExistsById(int id){
         if(!repository.existsById(id)){
-            throw new RuntimeException("There is not such a model.");
+            throw new BusinessException("There is not such a model.");
         }
     }
 
     private void checkIfModelExistsByName(String name){
         if (repository.existsByNameIgnoreCase(name)){
-            throw new RuntimeException("There is a model with this name already.");
+            throw new BusinessException("There is a model with this name already.");
         }
     }
 

@@ -17,9 +17,11 @@ import java.util.List;
 @Getter
 @Setter
 public class Car {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private int modelYear;
     private String plate;
     @Enumerated(EnumType.STRING)
@@ -30,5 +32,8 @@ public class Car {
     @ManyToOne
     @JoinColumn(name = "model_id")
     private Model model;
+    @OneToMany(mappedBy = "car")
+    private List<Rental> rentals;
+
 
 }

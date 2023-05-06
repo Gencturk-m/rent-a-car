@@ -13,7 +13,7 @@ public interface MaintenanceService {
     List<GetAllMaintenancesResponse> getAll();
     GetMaintenanceResponse getById(int id);
 
-    GetMaintenanceResponse returnCarFromMaintenance(int carId, double maintenancePrice);
+    GetMaintenanceResponse returnCarFromMaintenance(int carId);
 
     CreateMaintenanceResponse create(CreateMaintenanceRequest request);
 

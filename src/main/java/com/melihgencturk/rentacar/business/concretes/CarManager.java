@@ -7,6 +7,7 @@ import com.melihgencturk.rentacar.business.dto.responses.create.CreateCarRespons
 import com.melihgencturk.rentacar.business.dto.responses.get.GetAllCarsResponse;
 import com.melihgencturk.rentacar.business.dto.responses.get.GetCarResponse;
 import com.melihgencturk.rentacar.business.dto.responses.update.UpdateCarResponse;
+import com.melihgencturk.rentacar.core.exceptions.BusinessException;
 import com.melihgencturk.rentacar.entities.Car;
 import com.melihgencturk.rentacar.entities.Enums.CarState;
 import com.melihgencturk.rentacar.repository.CarRepository;
@@ -78,7 +79,7 @@ public class CarManager implements CarService {
 
     private void checkIfCarExistsById(int id) {
         if (!repository.existsById(id)) {
-            throw new RuntimeException("There is not such a car!");
+            throw new BusinessException("There is not such a car!");
         }
     }
 

@@ -5,17 +5,16 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDate;
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class GetAllMaintenancesResponse {
+public class GetPaymentResponse {
     private int id;
-    private String information;
-    private LocalDate startDate;
-    private LocalDate endDate;
-    private boolean isCompleted;
-    private int carId;
+    private String cardNumber;
+    private String cardHolder;
+    private int cardExpirationYear;
+    private int cardExpirationMonth;
+    private String cardCvv;
+    private double balance;
 }

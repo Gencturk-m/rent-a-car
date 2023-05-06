@@ -1,23 +1,22 @@
 package com.melihgencturk.rentacar.business.dto.requests.create;
 
-import com.melihgencturk.rentacar.entities.Enums.CarState;
-import jakarta.validation.constraints.Max;
+import com.melihgencturk.rentacar.business.dto.PaymentRequest;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CreateCarRequest {
-
-
-    private int modelYear;
-    private String plate;
-    private int modelId;
+public class CreateRentalRequest {
+    private int carId;
     private double dailyPrice;
+    private int rentedForDays;
+    private PaymentRequest paymentRequest;
 }
+
+
