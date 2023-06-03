@@ -63,10 +63,8 @@ public class MaintenanceManager implements MaintenanceService {
 
     @Override
     public CreateMaintenanceResponse create(CreateMaintenanceRequest request) {
-
         checkIfCarIsInMaintenance(request);
         checkIfCarIsRented(request);
-
         Maintenance maintenance = mapper.map(request,Maintenance.class);
         maintenance.setId(0);
         maintenance.setCompleted(false);
